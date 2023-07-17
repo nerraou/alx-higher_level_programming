@@ -37,7 +37,6 @@ int *list_to_array(listint_t *head, int *p_size)
 	for (int i = 0; i < size; i++)
 	{
 		array[i] = head->n;
-		printf("%d\n", array[i]);
 		head = head->next;
 	}
 	return (array);
