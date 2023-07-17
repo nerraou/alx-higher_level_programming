@@ -54,7 +54,7 @@ int is_palindrome(listint_t **head)
 	int start;
 	int end;
 
-	if (!head)
+	if (head == NULL || *head == NULL)
 		return (1);
 	array = list_to_array(*head, &size);
 	if (!array)
