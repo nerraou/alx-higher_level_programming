@@ -15,12 +15,15 @@ class Square:
         """calculate the area of the square"""
         return self.__size * self.__size
 
+    @property
     def size(self):
-        """return size attribute"""
+        """get size attribute"""
         return self.__size
 
+    @size.setter
     def size(self, value):
-        self.__validate_size(size)
+        """set size attribute"""
+        self.__validate_size(value)
         self.__size = value
 
     def __validate_size(self, value):
