@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 class Square:
-    """square class"""
+    """square class with private size attribute"""
     __size = None
 
     def __init__(self, new_size):
+        """Initializes size attribute."""
         self.__size = new_size
