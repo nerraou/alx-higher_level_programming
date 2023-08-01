@@ -18,7 +18,9 @@ class Square:
             return "\n"
         str = "\n" * self.position[1]
         for i in range(0, self.size):
-            str += " " * self.position[0] + "#" * self.size + "\n"
+            str += " " * self.position[0] + "#" * self.size
+            if i < self.size - 1:
+                str += "\n"
         return str
 
     def area(self):
