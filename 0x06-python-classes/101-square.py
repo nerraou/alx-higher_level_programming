@@ -12,6 +12,15 @@ class Square:
         self.size = size
         self.position = position
 
+    def __str__(self):
+        """return square prints"""
+        if self.size == 0:
+            return "\n"
+        str = "\n" * self.position[1]
+        for i in range(0, self.size):
+            str += " " * self.position[0] + "#" * self.size + "\n"
+        return str
+
     def area(self):
         """calculate the area of the square"""
         return self.__size * self.__size
@@ -40,13 +49,7 @@ class Square:
 
     def my_print(self):
         """print the square"""
-        if self.size == 0:
-            print()
-            return
-        print("\n" * self.position[1], end="")
-        for i in range(0, self.size):
-            print(" " * self.position[0], end="")
-            print("#" * self.size)
+        print(self, end="")
 
     def __validate_size(self, value):
         """validate size"""
@@ -61,4 +64,3 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         if (len(value) != 2 or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-
