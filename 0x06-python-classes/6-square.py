@@ -59,5 +59,7 @@ class Square:
         """validate position"""
         if (type(value) != tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
+        if (type(position[0]) != int or type(position[1]) != int):
+            raise TypeError("position must be a tuple of 2 positive integers")
         if (len(value) != 2 or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
