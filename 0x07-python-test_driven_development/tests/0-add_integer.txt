@@ -1,0 +1,4 @@
+>>> add_integer = __import__('main').add_integer
+
+>>> add_integer(2, 3)
+5
