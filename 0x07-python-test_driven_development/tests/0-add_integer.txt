@@ -1,4 +1,36 @@
->>> add_integer = __import__('main').add_integer
+>>> add_integer = __import__("0-add_integer").add_integer
 
->>> add_integer(2, 3)
+a and b, both valid
+>>> add_integer(1, 2)
+3
+
+default value
+>>> add_integer(1)
+99
+
+test a and b float
+>>> add_integer(1.3, 3.2)
+4
+
+test a float
+>>> add_integer(1.3)
+99
+
+test b float
+>>> add_integer(1, 4.2)
 5
+
+test a and b both invalid type
+>>> add_integer("1", "4.2")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+test a invalid type
+>>> add_integer("1", 4.2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+test b invalid type
+>>> add_integer(1, "4.2")
+Traceback (most recent call last):
+TypeError: b must be an integer
