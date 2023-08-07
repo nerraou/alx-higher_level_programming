@@ -7,11 +7,13 @@ class Rectangle:
     This is rectangle empty class
     """
     def __init__(self, width=0, height=0):
+        """init rectangle"""
         self.width = width
         self.height = height
 
     def __del__(self):
-        print("Bye rectangle... ")
+        """delete rectangle"""
+        print("{:s}".format("Bye rectangle... "))
 
     def area(self):
         """calculate area of rectangle"""
