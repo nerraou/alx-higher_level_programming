@@ -1,0 +1,20 @@
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+valid test case
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+invalid types
+>>> say_my_name(1, 2)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+invalid first_name type
+>>> say_my_name(1, 2)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+invalid last_name type
+>>> say_my_name("John", 2)
+Traceback (most recent call last):
+TypeError: last_name must be a string
