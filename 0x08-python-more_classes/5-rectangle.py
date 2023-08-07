@@ -13,7 +13,7 @@ class Rectangle:
 
     def __del__(self):
         """delete rectangle"""
-        print("{:s}".format("Bye rectangle... "))
+        print("{:s}".format("Bye rectangle..."))
 
     def area(self):
         """calculate area of rectangle"""
