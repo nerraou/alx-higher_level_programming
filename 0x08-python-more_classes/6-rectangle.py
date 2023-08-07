@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    count = 0
+    number_of_instances = 0
     """
     This is rectangle empty class
     """
@@ -11,12 +11,12 @@ class Rectangle:
         """init rectangle"""
         self.width = width
         self.height = height
-        type(self).count += 1
+        type(self).number_of_instances += 1
 
     def __del__(self):
         """delete rectangle"""
         print("{:s}".format("Bye rectangle..."))
-        type(self).count -= 1
+        type(self).number_of_instances -= 1
 
     def area(self):
         """calculate area of rectangle"""
