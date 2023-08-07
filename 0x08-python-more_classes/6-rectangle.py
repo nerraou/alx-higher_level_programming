@@ -11,12 +11,12 @@ class Rectangle:
         """init rectangle"""
         self.width = width
         self.height = height
-        Rectangle.count += 1
+        type(self).count += 1
 
     def __del__(self):
         """delete rectangle"""
         print("{:s}".format("Bye rectangle..."))
-        Rectangle.count -= 1
+        type(self).count -= 1
 
     def area(self):
         """calculate area of rectangle"""
