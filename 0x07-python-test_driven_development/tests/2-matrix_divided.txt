@@ -29,6 +29,11 @@ None matrix
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+empty matrix
+>>> matrix_divided([], 10)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 missing one arguments
 >>> matrix_divided([])
 Traceback (most recent call last):
