@@ -38,6 +38,12 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer([0])
         self.assertEqual(result, 0)
 
+    def test_max_in_middle(self):
+        """test max in the middle"""
+
+        result = max_integer([0, 3, 2])
+        self.assertEqual(result, 3)
+
 
 if __name__ == "__main__":
     unittest.main()
