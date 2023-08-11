@@ -11,4 +11,4 @@ def text_indentation(text):
     text = text.replace("?", ".")
     texts = text.split(".")
     for t in texts:
-        print(t.strip(), end="\n\n")
+        print(t.strip(" "), end="\n\n")
