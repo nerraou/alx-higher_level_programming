@@ -35,8 +35,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_one_element(self):
         """test one element"""
 
-        result = max_integer([0])
-        self.assertEqual(result, 0)
+        result = max_integer([7])
+        self.assertEqual(result, 7)
 
     def test_max_in_middle(self):
         """test max in the middle"""
