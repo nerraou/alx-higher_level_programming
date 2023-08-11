@@ -18,6 +18,11 @@ def matrix_divided(matrix, div):
     new_matrix = []
     row_len = None
     for row in matrix:
+        if type(row) is not list or len(matrix[0]) == 0:
+            raise TypeError(
+                "matrix must be a matrix "
+                "(list of lists) of integers/floats"
+            )
         if row_len is None:
             row_len = len(row)
         if row_len is not len(row):

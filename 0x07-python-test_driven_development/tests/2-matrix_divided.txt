@@ -43,3 +43,8 @@ missing two arguments
 >>> matrix_divided()
 Traceback (most recent call last):
 TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+empty row matrix
+>>> matrix_divided([[], [1,2]], 10)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
