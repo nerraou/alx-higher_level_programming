@@ -5,6 +5,8 @@
 def matrix_divided(matrix, div):
     """divides all elements of a matrix by div"""
 
+    if div == float('inf') or div == -float('inf') or div != div:
+        raise TypeError("div must be a number")
     if (type(div) is not int and type(div) is not float):
         raise TypeError("div must be a number")
     if (div == 0):
