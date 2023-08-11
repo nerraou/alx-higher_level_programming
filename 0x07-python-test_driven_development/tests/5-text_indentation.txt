@@ -7,8 +7,12 @@ hello
 world
 <BLANKLINE>
 
-
 invalid text type
 >>> text_indentation(1)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+missing argument
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
