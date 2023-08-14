@@ -1,0 +1,37 @@
+>>> MyList = __import__('1-my_list').MyList
+
+unsorted list
+>>> MyList([1, 4, 2, 3, 5]).print_sorted()
+[1, 2, 3, 4, 5]
+
+sorted list
+>>> MyList([1, 2, 3, 4, 5]).print_sorted()
+[1, 2, 3, 4, 5]
+
+one element
+>>> MyList([45]).print_sorted()
+[45]
+
+empty list
+>>> MyList([]).print_sorted()
+[]
+
+None
+>>> MyList([None]).print_sorted()
+[None]
+
+None and value
+>>> MyList([None, 889, 5]).print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'NoneType'
+
+type error mixed content
+>>> MyList(["hello", 45]).print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
+
+type error mixed content
+>>> MyList(["hello", 45.9]).print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'float' and 'str'
+
