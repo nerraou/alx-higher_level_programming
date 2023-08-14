@@ -80,3 +80,7 @@ test remove method
 >>> my_list.remove(2)
 >>> print(my_list)
 [3]
+
+basic test
+>>> MyList([2, 3])
+[2, 3]
