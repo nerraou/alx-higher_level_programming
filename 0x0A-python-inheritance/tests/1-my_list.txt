@@ -1,5 +1,12 @@
 >>> MyList = __import__('1-my_list').MyList
 
+>>> type(MyList())
+<class '1-my_list.MyList'>
+
+>>> MyList([1, 9], [9, 8])
+Traceback (most recent call last):
+TypeError: list expected at most 1 argument, got 2
+
 unsorted list
 >>> MyList([1, 4, 2, 3, 5]).print_sorted()
 [1, 2, 3, 4, 5]
@@ -48,4 +55,3 @@ Not a list but a number
 >>> MyList(1998).print_sorted()
 Traceback (most recent call last):
 TypeError: 'int' object is not iterable
-
