@@ -3,6 +3,7 @@
 check is inherits from
 """
 
+
 def inherits_from(obj, a_class):
     """
      check is an instance
