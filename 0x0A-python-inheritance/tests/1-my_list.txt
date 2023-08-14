@@ -55,3 +55,7 @@ Not a list but a number
 >>> MyList(1998).print_sorted()
 Traceback (most recent call last):
 TypeError: 'int' object is not iterable
+
+print print_sorted_method
+>>> print(MyList().print_sorted)
+<bound method MyList.print_sorted of []>
