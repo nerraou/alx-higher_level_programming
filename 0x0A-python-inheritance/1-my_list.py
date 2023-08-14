@@ -2,12 +2,12 @@
 """MyList class"""
 
 
-
 class MyList(list):
     """
     MYlist class inherate from list class
     """
     def print_sorted(self):
-        copyList = self.copy()
-        copyList.sort()
-        print(copyList)
+        """
+        print sorted list
+        """
+        print(sorted(self))
