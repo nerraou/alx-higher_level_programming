@@ -84,3 +84,11 @@ test remove method
 basic test
 >>> MyList([2, 3])
 [2, 3]
+
+negative list
+>>> MyList([-4, -45, -7]).print_sorted()
+[-45, -7, -4]
+
+doc
+>>> len(MyList.print_sorted.__doc__) > 1
+True
