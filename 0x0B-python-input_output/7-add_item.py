@@ -1,10 +1,20 @@
 #!/usr/bin/python3
-"""save args to file"""
+"""imports"""
 import sys
+import os.path
+"""save args to file"""
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-out_filename = "add_item.json"
+filename = "add_item.json"
+if os.path.isfile(filename):
+    values = load_from_json_file(filename)
+else:
+    values = []
+
 sys.argv.pop(0)
-save_to_json_file(sys.argv, out_filename)
+
+values.extend(sys.argv)
+
+save_to_json_file(values, filename)
