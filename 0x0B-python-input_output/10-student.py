@@ -20,7 +20,10 @@ class Student:
         """
         retrives dictionary representation
         """
-        if attrs is not None:
-            res = {k: self.__dict__[k] for k in self.__dict__.keys() & attr}
+        res = {}
+        if type(attrs) is list:
+            for key in attrs:
+                if key in self.__dict__:
+                    res[key] = self.__dict__[key]
             return res
         return self.__dict__
