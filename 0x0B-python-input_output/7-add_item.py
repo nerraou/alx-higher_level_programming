@@ -13,8 +13,8 @@ try:
 except FileNotFoundError:
     values = []
 
-sys.argv.pop(0)
+argv.pop(0)
 
-values.extend(sys.argv)
+values.extend(argv)
 
 save_to_json_file(values, filename)
