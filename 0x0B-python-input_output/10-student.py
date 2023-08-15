@@ -21,6 +21,6 @@ class Student:
         retrives dictionary representation
         """
         if attrs is not None:
-            lst3 = [value for value in attrs if value in self.__dict__]
+            lst3 = {value for value in attrs if value in self.__dict__}
             return lst3
         return self.__dict__
