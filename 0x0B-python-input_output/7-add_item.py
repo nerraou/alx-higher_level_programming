@@ -13,8 +13,7 @@ try:
 except FileNotFoundError:
     values = []
 
-argv.pop(0)
-
-values.extend(argv)
+for i in range(1, len(argv)):
+    content.append(argv[i])
 
 save_to_json_file(values, filename)
