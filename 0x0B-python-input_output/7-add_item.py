@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""imports"""
+"""imports sys"""
 import sys
+"""imports os.path"""
 import os.path
 """save args to file"""
 
