@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-"""imports sys"""
-import sys
-"""imports os.path"""
-import os.path
 """save args to file"""
+import sys
+import os.path
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
