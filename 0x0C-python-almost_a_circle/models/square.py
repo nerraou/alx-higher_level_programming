@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle class module"""
 
+
 from models.rectangle import Rectangle
 
 

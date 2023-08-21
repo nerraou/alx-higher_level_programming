@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class module"""
 
+
 from json import dumps, loads, load
 from os import path
 
