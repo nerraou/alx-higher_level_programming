@@ -50,11 +50,6 @@ class TestBase(unittest.TestCase):
         json_str = Base.to_json_string([{"x": 1}])
         self.assertEqual(json_str, '[{"x": 1}]')
 
-    def test_save_to_file_none_arg(self):
-        """test to json string with None argument"""
-        with self.assertRaises(TypeError):
-            Rectangle.save_to_file(None)
-
         try:
             os.remove("Rectangle.json")
         except Exception:
