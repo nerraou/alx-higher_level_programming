@@ -52,6 +52,11 @@ class TestBase(unittest.TestCase):
         """test to json string with None argument"""
         with self.assertRaises(TypeError):
             Rectangle.save_to_file(None)
+
+        try:
+            os.remove("Rectangle.json")
+        except Exception:
+            pass
     
     def test_save_to_file_wrong_args_count(self):
         """test to json string with wrong args count"""
