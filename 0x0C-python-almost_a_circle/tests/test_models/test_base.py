@@ -23,6 +23,8 @@ class TestBase(unittest.TestCase):
         self.assertGreater(len(Base.to_json_string.__doc__), 1)
         self.assertGreater(len(Base.save_to_file.__doc__), 1)
         self.assertGreater(len(Base.from_json_string.__doc__), 1)
+        self.assertGreater(len(Base.create.__doc__), 1)
+        self.assertGreater(len(Base.load_from_file.__doc__), 1)
 
     def test_none_id(self):
         """test none id"""
@@ -116,6 +118,26 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r.height, 100)
         self.assertEqual(r.x, 9)
         self.assertEqual(r.y, 1)
-        
+    
+    def test_load_from_file_with_args(self):
+        """test load from file with args"""
+        with self.assertRaises(TypeError):
+            Rectangle.load_from_file(1)
+    
+    def test_load_from_file(self):
+        """test load from file"""
+        r1 = Rectangle(1, 2)
+        r2 = Rectangle(3, 4)
+        rects_ref = [r1, r2]
+        Rectangle.save_to_file(rects_ref)
+        rects = Rectangle.load_from_file()
 
-        
+        for i in range(0, len(rects_ref)):
+            dict_ref = rects_ref[i].to_dictionary()
+            dict = rects[i].to_dictionary()
+            self.assertDictEqual(dict_ref, dict)
+
+        try:
+            os.remove("Rectangle.json")
+        except Exception:
+            pass

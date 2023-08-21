@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Base class module"""
 
-from json import dumps, loads
+from json import dumps, loads, load
+from os import path
 
 
 class Base:
@@ -54,3 +55,19 @@ class Base:
         with open(filename, "w") as f:
             list_dictionaries = [obj.to_dictionary() for obj in list_objs]
             f.write(Base.to_json_string(list_dictionaries))
+    
+    @classmethod
+    def load_from_file(cls):
+        """load from file"""
+        filename = "{}.json".format(cls.__name__)
+        if not path.isfile(filename):
+            return []
+        objects = []
+
+        with open(filename, "r") as f:
+            objects_json = cls.from_json_string(f.read())
+            for obj in objects_json:
+                objects.append(cls.create(**obj))
+
+        return objects
+
