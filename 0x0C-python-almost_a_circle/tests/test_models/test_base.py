@@ -21,6 +21,7 @@ class TestBase(unittest.TestCase):
         self.assertGreater(len(Base.__init__.__doc__), 1)
         self.assertGreater(len(Base.to_json_string.__doc__), 1)
         self.assertGreater(len(Base.save_to_file.__doc__), 1)
+        self.assertGreater(len(Base.from_json_string.__doc__), 1)
 
     def test_none_id(self):
         """test none id"""
@@ -58,7 +59,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle.save_to_file([], [])
 
-
     def test_save_to_file(self):
         """test save to file"""
         Base._Base__nb_objects = 0
@@ -78,5 +78,22 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         except Exception:
             pass
+    
+    def test_from_json_string_with_args(self):
+        """from json string with args"""
+        with self.assertRaises(TypeError):
+            Base.from_json_string(1, 2)
+    
+    def test_from_json_string_no_string_arg(self):
+        """from json string with args with no string arg"""
+        with self.assertRaises(TypeError):
+            Base.from_json_string([1])
+        
+
+    def test_from_json_string(self):
+        """from json string with args"""
+        list_objs = Base.from_json_string('[{"x": 1}]')
+        for obj in list_objs:
+            self.assertDictEqual(obj, {"x": 1})
 
         
