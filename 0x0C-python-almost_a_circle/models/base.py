@@ -52,7 +52,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """serilize list of dictionaries to json file"""
         if list_objs is None:
-            return
+            list_objs = []
 
         try:
             filename = "{}.json".format(cls.__name__)
