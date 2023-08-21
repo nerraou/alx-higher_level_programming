@@ -32,6 +32,22 @@ class Base:
         return loads(json_string)
 
     @classmethod
+    def create(cls, **dictionary):
+        """create class from dictionary"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        instance = None
+        if cls.__name__ == "Rectangle":
+            instance = Rectangle(4, 3)
+        if cls.__name__ == "Square":
+            instance = Square(10)
+        
+        if instance is not None:
+            instance.update(**dictionary)
+        return instance
+
+    @classmethod
     def save_to_file(cls, list_objs):
         """serilize list of dictionaries to json file"""
         filename = "{}.json".format(cls.__name__)

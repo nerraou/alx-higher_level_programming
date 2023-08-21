@@ -2,10 +2,11 @@
 """unit test module for Base class"""
 
 import os
+import unittest
 
 from models.base import Base
 from models.rectangle import Rectangle
-import unittest
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -95,5 +96,21 @@ class TestBase(unittest.TestCase):
         list_objs = Base.from_json_string('[{"x": 1}]')
         for obj in list_objs:
             self.assertDictEqual(obj, {"x": 1})
+    
+    def test_create_square(self):
+        """test create square"""
+        s = Square.create(size=99, x=9, y=1)
+        self.assertEqual(s.size, 99)
+        self.assertEqual(s.x, 9)
+        self.assertEqual(s.y, 1)
+    
+    def test_create_rectangle(self):
+        """test create rectangle"""
+        r = Rectangle.create(width=99, height=100, x=9, y=1)
+        self.assertEqual(r.width, 99)
+        self.assertEqual(r.height, 100)
+        self.assertEqual(r.x, 9)
+        self.assertEqual(r.y, 1)
+        
 
         
