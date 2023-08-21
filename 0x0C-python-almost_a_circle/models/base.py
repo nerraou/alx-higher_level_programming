@@ -3,8 +3,6 @@
 
 
 from json import dumps, loads, load
-from os import path
-
 
 class Base:
     """Base class"""
@@ -60,14 +58,14 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """load from file"""
-        filename = "{}.json".format(cls.__name__)
-        if not path.isfile(filename):
+
+        try:
+            filename = "{}.json".format(cls.__name__)
+            objects =  []
+            with open(filename, "r") as f:
+                objects_json = cls.from_json_string(f.read())
+                for obj in objects_json:
+                    objects.append(cls.create(**obj))
+            return objects
+        except FileNotFoundError:
             return []
-        objects = []
-
-        with open(filename, "r") as f:
-            objects_json = cls.from_json_string(f.read())
-            for obj in objects_json:
-                objects.append(cls.create(**obj))
-
-        return objects
