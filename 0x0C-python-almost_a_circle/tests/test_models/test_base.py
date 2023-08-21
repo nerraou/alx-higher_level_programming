@@ -49,7 +49,7 @@ class TestBase(unittest.TestCase):
         """test to json string with None argument"""
         json_str = Base.to_json_string([{"x": 1}])
         self.assertEqual(json_str, '[{"x": 1}]')
-    
+
     def test_save_to_file_none_arg(self):
         """test to json string with None argument"""
         with self.assertRaises(TypeError):
@@ -59,7 +59,7 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         except Exception:
             pass
-    
+
     def test_save_to_file_wrong_args_count(self):
         """test to json string with wrong args count"""
         with self.assertRaises(TypeError):
@@ -86,31 +86,30 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         except Exception:
             pass
-    
+
     def test_from_json_string_with_args(self):
         """from json string with args"""
         with self.assertRaises(TypeError):
             Base.from_json_string(1, 2)
-    
+
     def test_from_json_string_no_string_arg(self):
         """from json string with args with no string arg"""
         with self.assertRaises(TypeError):
             Base.from_json_string([1])
-        
 
     def test_from_json_string(self):
         """from json string with args"""
         list_objs = Base.from_json_string('[{"x": 1}]')
         for obj in list_objs:
             self.assertDictEqual(obj, {"x": 1})
-    
+
     def test_create_square(self):
         """test create square"""
         s = Square.create(size=99, x=9, y=1)
         self.assertEqual(s.size, 99)
         self.assertEqual(s.x, 9)
         self.assertEqual(s.y, 1)
-    
+
     def test_create_rectangle(self):
         """test create rectangle"""
         r = Rectangle.create(width=99, height=100, x=9, y=1)
@@ -118,12 +117,12 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r.height, 100)
         self.assertEqual(r.x, 9)
         self.assertEqual(r.y, 1)
-    
+
     def test_load_from_file_with_args(self):
         """test load from file with args"""
         with self.assertRaises(TypeError):
             Rectangle.load_from_file(1)
-    
+
     def test_load_from_file(self):
         """test load from file"""
         r1 = Rectangle(1, 2)

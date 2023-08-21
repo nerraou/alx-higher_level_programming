@@ -43,7 +43,7 @@ class Base:
             instance = Rectangle(4, 3)
         if cls.__name__ == "Square":
             instance = Square(10)
-        
+
         if instance is not None:
             instance.update(**dictionary)
         return instance
@@ -55,7 +55,7 @@ class Base:
         with open(filename, "w") as f:
             list_dictionaries = [obj.to_dictionary() for obj in list_objs]
             f.write(Base.to_json_string(list_dictionaries))
-    
+
     @classmethod
     def load_from_file(cls):
         """load from file"""
@@ -70,4 +70,3 @@ class Base:
                 objects.append(cls.create(**obj))
 
         return objects
-
