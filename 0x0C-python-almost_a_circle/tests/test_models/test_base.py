@@ -140,7 +140,7 @@ class TestBase(unittest.TestCase):
             os.remove("Rectangle.json")
         except Exception:
             pass
-    
+
     def test_load_from_file_file_not_found(self):
         """test load from file"""
         rects = Rectangle.load_from_file()

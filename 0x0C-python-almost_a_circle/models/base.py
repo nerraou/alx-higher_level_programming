@@ -4,6 +4,7 @@
 
 from json import dumps, loads
 
+
 class Base:
     """Base class"""
     __nb_objects = 0
@@ -64,7 +65,7 @@ class Base:
 
         try:
             filename = "{}.json".format(cls.__name__)
-            objects =  []
+            objects = []
             with open(filename, "r") as f:
                 objects_json = cls.from_json_string(f.read())
                 for obj in objects_json:
