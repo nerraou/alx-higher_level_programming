@@ -1,2 +1,4 @@
--- COUNT 
-SELECT COUNT(*) FROM first_table where id=89;
+-- COUNT THE NUMBER OF ROWS WITH ID 89
+SELECT COUNT(*)
+FROM `first_table`
+WHERE `id` = 89;
