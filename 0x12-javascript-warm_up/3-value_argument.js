@@ -1,11 +1,13 @@
 #!/usr/bin/node
 
-if (process.argv.length === 2) {
+let lastIndex = 0;
+
+process.argv.forEach((element, index) => {
+  if (index > 1) {
+    console.log(element);
+  }
+  lastIndex = index;
+});
+if (lastIndex <= 1) {
   console.log('No argument');
-} else {
-  process.argv.forEach((element, index) => {
-    if (index > 1) {
-      console.log(element);
-    }
-  });
 }
