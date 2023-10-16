@@ -6,7 +6,7 @@ if (isNaN(value)) {
 } else {
   let i = 0;
   while (i < value) {
-    console.log('#'.repeat(value));
+    console.log('X'.repeat(value));
     i++;
   }
 }
