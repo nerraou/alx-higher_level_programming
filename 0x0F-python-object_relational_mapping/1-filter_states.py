@@ -23,8 +23,8 @@ if __name__ == "__main__":
     SELECT *
     FROM states
     WHERE name LIKE 'N%'
+    COLLATE utf8mb4_bin
     ORDER BY id ASC
-    COLLATE latin1_general_cs
     """
     cur.execute(sql)
 
