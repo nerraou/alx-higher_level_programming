@@ -5,9 +5,8 @@ import sys
 import sqlalchemy
 from sqlalchemy import orm
 
-if __name__ == "main":
+if __name__ == "__main__":
     metadata = sqlalchemy.MetaData()
-    Base = orm.declarative_base()
 
     username = sys.argv[1]
     password = sys.argv[2]
@@ -20,8 +19,6 @@ if __name__ == "main":
     format_str = 'mysql+mysqldb://{}:{}@localhost/{}'
     connection_string = format_str.format(username, password, database)
     engine = sqlalchemy.create_engine(connection_string, pool_pre_ping=True)
-
-    Base.metadata.create_all(engine)
 
     session = orm.Session(engine)
     for state in session.query(State).order_by(State.c.id).all():
