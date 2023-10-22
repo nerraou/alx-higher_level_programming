@@ -1,22 +1,29 @@
 #!/usr/bin/python3
+"""select states script"""
 
 import sys
-from sqlalchemy import create_engine, orm
-from sqlalchemy.ext.declarative import declarative_base
+import sqlalchemy
+from sqlalchemy import orm
 
-Base = orm.declarative_base()
+if __name__ == "main":
+    metadata = sqlalchemy.MetaData()
+    Base = orm.declarative_base()
 
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database), pool_pre_ping=True)
-Base.metadata.create_all(engine)
+    idCol = sqlalchemy.Column('id', sqlalchemy.Integer(), primary_key=True)
+    nameCol = sqlalchemy.Column('name', sqlalchemy.String(256), nullable=False)
+    State = sqlalchemy.Table('states', metadata, idCol, nameCol)
 
-# Base.metadata.create_all(engine)
+    format_str = 'mysql+mysqldb://{}:{}@localhost/{}'
+    connection_string = format_str.format(username, password, database)
+    engine = sqlalchemy.create_engine(connection_string, pool_pre_ping=True)
 
-# session = Session(engine)
-# for state in session.query(State).order_by(State.id).all(): # HERE: no SQL query, only objects!
-#     print("{}: {}".format(state.id, state.name))
-# session.close()
+    Base.metadata.create_all(engine)
 
+    session = orm.Session(engine)
+    for state in session.query(State).order_by(State.c.id).all():
+        print("({}, {})".format(state.id, state.name))
+    session.close()
