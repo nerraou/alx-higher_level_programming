@@ -23,7 +23,7 @@ if __name__ == "__main__":
     sql = """
     SELECT cities.id AS id, cities.name AS name, states.name AS state_name
     FROM states INNER JOIN cities ON states.id = cities.state_id
-    WHERE state.name LIKE %s
+    WHERE states.name LIKE %s
     COLLATE utf8mb4_bin
     ORDER BY cities.id ASC
     """
@@ -35,7 +35,8 @@ if __name__ == "__main__":
         if flag is True:
             print(", ")
         flag = True
-        print("{}".format(row[1]))
+        print("{}".format(row[1]), end="")
+    print()
 
     cur.close()
     cnx.close()
