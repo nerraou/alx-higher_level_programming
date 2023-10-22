@@ -27,7 +27,7 @@ if __name__ == "__main__":
     COLLATE utf8mb4_bin
     ORDER BY id ASC
     """
-    cur.execute(sql, name)
+    cur.execute(sql, (name,))
 
     query_rows = cur.fetchall()
     for row in query_rows:
