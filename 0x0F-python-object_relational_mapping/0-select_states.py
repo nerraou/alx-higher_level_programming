@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
     session = orm.Session(engine)
     for state in session.query(State).order_by(State.c.id).all():
-        print("({}, {})".format(state.id, state.name))
+        print("({}, '{}')".format(state.id, state.name))
     session.close()
