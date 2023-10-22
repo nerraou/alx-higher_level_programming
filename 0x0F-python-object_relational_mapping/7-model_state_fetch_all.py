@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     engine = create_engine(db_url)
 
-    session = orm.Session()
+    session = orm.Session(engine)
 
     for instance in session.query(State).order_by(State.id):
         print('{}: {}'.format(instance.id, instance.name))
