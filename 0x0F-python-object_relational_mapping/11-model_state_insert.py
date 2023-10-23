@@ -27,4 +27,6 @@ if __name__ == "__main__":
 
     session.add(state)
     session.commit()
+
+    print('{}'.format(state.id))
     session.close()
