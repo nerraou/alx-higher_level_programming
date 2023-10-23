@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-A script that lists all State objects
-from the database hbtn_0e_6_usa
+A script get first state
 """
 
 import sys
@@ -24,6 +23,9 @@ if __name__ == "__main__":
 
     session = orm.Session(engine)
 
-    for instance in session.query(State).order_by(State.id):
-        print('{}: {}'.format(instance.id, instance.name))
+    state = State()
+    state.name = "Louisiana"
+
+    session.add(state)
+    session.commit()
     session.close()

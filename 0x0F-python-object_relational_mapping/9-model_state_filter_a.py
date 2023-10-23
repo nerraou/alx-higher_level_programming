@@ -27,3 +27,4 @@ if __name__ == "__main__":
         order_by(State.id).filter(State.name.contains("a"))
     for instance in states:
         print('{}: {}'.format(instance.id, instance.name))
+    session.close()
