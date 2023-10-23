@@ -23,8 +23,7 @@ if __name__ == "__main__":
 
     session = orm.Session(engine)
 
-    state = State()
-    state.name = "Louisiana"
+    state = State(name="Louisiana")
 
     session.add(state)
     session.commit()
