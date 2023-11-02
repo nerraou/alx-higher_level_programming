@@ -1,7 +1,0 @@
-HTTP/1.1 302 FOUND
-Server: Werkzeug/2.1.0 Python/3.8.10
-Date: Thu, 02 Nov 2023 22:15:36 GMT
-Content-Type: text/html; charset=utf-8
-Content-Length: 222
-Location: /route_2
-
