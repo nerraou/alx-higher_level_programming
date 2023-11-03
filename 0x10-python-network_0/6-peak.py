@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+create find peak function
+"""
+
+
 def find_peak(list_of_integers):
     """
     find first peak
