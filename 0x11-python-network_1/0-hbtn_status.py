@@ -17,7 +17,7 @@ if __name__ == "__main__":
         html = res.read()
         udata = try_utf8(html)
         if udata is None:
-            check_utf8 = "KO"
+            check_utf8 = ""
         else:
             check_utf8 = "OK"
         print("Body response:")
