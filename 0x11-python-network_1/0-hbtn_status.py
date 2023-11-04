@@ -13,7 +13,6 @@ if __name__ == "__main__":
             return data.decode('utf-8')
         except UnicodeDecodeError:
             return None
-
     with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as res:
         html = res.read()
         udata = try_utf8(html)
@@ -22,6 +21,6 @@ if __name__ == "__main__":
         else:
             check_utf8 = "OK"
         print("Body response:")
-        print("    - type: {}".format(type(html)))
-        print("    - content: {}".format(html))
-        print("    - utf8 content: {}".format(check_utf8))
+        print("\t- type: {}".format(type(html)))
+        print("\t- content: {}".format(html))
+        print("\t- utf8 content: {}".format(check_utf8))
